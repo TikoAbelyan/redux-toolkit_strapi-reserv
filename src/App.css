@@ -30,12 +30,19 @@
 }
 
 .reservation-card-container {
-  background-color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.4rem;
-  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.171);
   width: 80%;
   margin: 1rem 0;
+}
+.containerCard {
+  display: flex;
+  align-items: center;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.171);
+  margin: 20px 15px 0 0;
+}
+.container button {
+  height: 20px;
 }
 .reservation-input-container {
   width: 80%;
