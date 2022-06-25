@@ -17,7 +17,7 @@ export const CustomerCard = ({ id, name, food }: CustomerCardType) => {
       <p>{name}</p>
       <div className="customer-foods-container">
         <div className="customer-food">
-          {food.map((food, index) => {
+          {food.map((food) => {
             return (
               <div className="food">
                 <p>{food}</p>

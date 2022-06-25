@@ -8,6 +8,9 @@ import { addReservation } from "./features/reservationSlice";
 
 function App() {
   const dispatch = useDispatch();
+  const tableReservation = useSelector(
+    (state: RootState) => state.reservations.table
+  );
   const [reservationNameInput, setReservationNameInput] = useState("");
   const reservations = useSelector(
     (state: RootState) => state.reservations.value
@@ -18,7 +21,9 @@ function App() {
     dispatch(addReservation(reservationNameInput));
     setReservationNameInput("");
   };
-  console.log(customers);
+  const handleSelectReservation = (e: string) => {
+    dispatch(addReservation(e));
+  };
 
   return (
     <div className="App">
@@ -38,6 +43,21 @@ function App() {
               onChange={(e) => setReservationNameInput(e.target.value)}
             />
             <button onClick={handleAddReservations}>Add</button>
+          </div>
+          <div className="select-table">
+            <select
+              onChange={(e) => handleSelectReservation(e.target.value)}
+              defaultValue="select table"
+            >
+              <option value="" selected>
+                Choose Table
+              </option>
+              {tableReservation.map((table) => (
+                <option value={table} key={table}>
+                  {table}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <div className="customer-food-container">
