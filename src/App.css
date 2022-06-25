@@ -44,6 +44,12 @@
 .container button {
   height: 20px;
 }
+.food {
+  display: flex;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.171);
+  margin: 0 10px;
+  gap: 10px;
+}
 .reservation-input-container {
   width: 80%;
   padding: 0.5rem 1rem;
