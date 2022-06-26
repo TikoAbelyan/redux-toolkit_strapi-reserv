@@ -1,3 +1,4 @@
+import { Button, Input } from "antd";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addFoodCustomer } from "../features/customerSlice";
@@ -26,18 +27,20 @@ export const CustomerCard = ({ id, name, food }: CustomerCardType) => {
           })}
         </div>
         <div className="customer-food-input-container">
-          <input
+          <Input
+            placeholder="food"
             value={customerFoodInput}
             onChange={(e) => setCustomerFoodInput(e.target.value)}
           />
-          <button
+          <Button
             onClick={() => {
               dispatch(addFoodCustomer({ id, food: customerFoodInput }));
               setCustomerFoodInput("");
             }}
+            type="primary"
           >
             Add
-          </button>
+          </Button>
         </div>
       </div>
     </div>

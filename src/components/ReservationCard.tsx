@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { removeReservation } from "../features/reservationSlice";
 import { addCustomer } from "../features/customerSlice";
 import { v4 as uuid } from "uuid";
+import { Button } from "antd";
 
 interface ReservationCardTypes {
   name: string;
@@ -27,13 +28,15 @@ export const ReservationCard = ({ name, index }: ReservationCardTypes) => {
       >
         {name}
       </div>
-      <button
+      <Button
+        type="primary"
+        shape="circle"
         onClick={() => {
           dispatch(removeReservation(index));
         }}
       >
         X
-      </button>
+      </Button>
     </div>
   );
 };
