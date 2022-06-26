@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface Oauth {
-  username: string;
-  password: string;
-
-  remember: boolean;
+interface OauthState {
+  value: User[];
 }
 
 interface User {
-  value: Oauth[];
+  username: string;
+  password: string;
+  remember: boolean;
 }
-const initialState: User = {
+
+const initialState: OauthState = {
   value: [{ username: "Tiko", password: "Tiko", remember: true }],
 };
 
@@ -18,7 +18,7 @@ export const loginSlice = createSlice({
   name: "oauth",
   initialState,
   reducers: {
-    login: () => {},
+    login: (state, action: PayloadAction) => {},
   },
 });
 
