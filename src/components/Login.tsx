@@ -1,9 +1,30 @@
 import React from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, notification } from "antd";
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
+import { useNavigate } from "react-router";
+import { AlertMessage } from "./Alert";
 
 const Login = () => {
+  const user = useSelector((state: RootState) => state.oauth);
+  const navigate = useNavigate();
+
   const onFinish = (values: any) => {
-    console.log("Success:", values);
+    if (
+      values.username === user.value[0].username &&
+      values.password === user.value[0].password
+    ) {
+      notification.open({
+        message: "login success",
+        description: AlertMessage({ type: "success", message: "cool" }),
+      });
+      navigate("/reservation");
+    } else {
+      notification.open({
+        message: "login Error",
+        description: AlertMessage({ type: "warning", message: "fall" }),
+      });
+    }
   };
 
   const onFinishFailed = (errorInfo: any) => {

@@ -18,7 +18,7 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/voice" element={<App />} />
+          <Route path="/reservation" element={<App />} />
         </Routes>
       </BrowserRouter>
     </Provider>
