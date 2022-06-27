@@ -15,14 +15,15 @@ const Login = () => {
       values.password === user.value[0].password
     ) {
       notification.open({
-        message: "login success",
-        description: AlertMessage({ type: "success", message: "cool" }),
+        message: AlertMessage({ type: "success", message: "Login success" }),
       });
       navigate("/reservation");
     } else {
       notification.open({
-        message: "login Error",
-        description: AlertMessage({ type: "warning", message: "fall" }),
+        message: AlertMessage({
+          type: "warning",
+          message: "Login/Password not exist",
+        }),
       });
     }
   };
