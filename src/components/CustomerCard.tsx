@@ -1,4 +1,4 @@
-import { Button, Input } from "antd";
+import { Button, Input, message, Tag } from "antd";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addFoodCustomer } from "../features/customerSlice";
@@ -21,7 +21,7 @@ export const CustomerCard = ({ id, name, food }: CustomerCardType) => {
           {food.map((food) => {
             return (
               <div className="food">
-                <p>{food}</p>
+                <Tag color="volcano">{food}</Tag>
               </div>
             );
           })}
@@ -36,6 +36,7 @@ export const CustomerCard = ({ id, name, food }: CustomerCardType) => {
             onClick={() => {
               dispatch(addFoodCustomer({ id, food: customerFoodInput }));
               setCustomerFoodInput("");
+              message.success("food added");
             }}
             type="primary"
           >

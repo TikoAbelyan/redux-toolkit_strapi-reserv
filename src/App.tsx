@@ -1,4 +1,4 @@
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input, message, Select } from "antd";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
@@ -26,9 +26,7 @@ function App() {
   };
   const handleSelectReservation = (e: string) => {
     dispatch(addReservation(e));
-  };
-  const onFinish = (e: string) => {
-    console.log(e);
+    message.success("table added");
   };
 
   return (
