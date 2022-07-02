@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+
+  toolkit:
+    container_name: toolkit
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: toolkit
+    restart: always
+    ports:
+      - "40000:3000"
