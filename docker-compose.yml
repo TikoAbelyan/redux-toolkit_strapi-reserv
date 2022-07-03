@@ -9,4 +9,4 @@ services:
     image: toolkit
     restart: always
     ports:
-      - "40000:3000"
+      - "4000:3000"
